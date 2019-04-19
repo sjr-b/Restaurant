@@ -18,10 +18,18 @@ public class Payment {
     }
 
     public static double findPrice(Item[] pl, String c){
-        // code missing
+        double price = 0;
+        for(int a = 0; a < pl.length; a++){
+            if (pl[a].getCode().equals(c)){
+                price = pl[a].getPrice();
+            }
+        }
+        return price;
     }
 
-    // calculateBill() - this method returns the bill (total value of the items consumed for a particular table)
+    public double calculateBill(Item[] pl) { // this method returns the bill (total value of the items consumed for a particular table)
+
+    }
 
     public void addFoodItem(FoodItem food){
         int a = 0;
