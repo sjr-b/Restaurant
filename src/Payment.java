@@ -28,7 +28,18 @@ public class Payment {
     }
 
     public double calculateBill(Item[] pl) { // this method returns the bill (total value of the items consumed for a particular table)
-
+        double total = 0;
+        for (int a = 0; a < fiCount; a++){
+            String code = fi[a].getItemCode();
+            double price = findPrice(pl, code);
+            total += price * (1 + foodTax);
+        }
+        for (int b = 0; b < diCount; b++){
+            String code = di[b].getItemCode();
+            double price = findPrice(pl, code);
+            total += price * (1 + drinkTax);
+        }
+        return total;
     }
 
     public void addFoodItem(FoodItem food){
